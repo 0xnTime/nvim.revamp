@@ -1,6 +1,6 @@
 vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
 vim.lsp.enable({ 'lua_ls' })
 vim.lsp.enable({ 'ts_ls' })
-vim.lsp.enable({ 'clang' })
+vim.lsp.enable({ 'ccls' })
 vim.lsp.enable({ 'gopls' })
 vim.lsp.enable({ 'pyright' })

@@ -14,8 +14,11 @@ keymap.set("n", "<leader>Y", [["+Y]])
 
 keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
+vim.keymap.set("n", "<C-c>", "gcc", { remap = true, desc = "Toggle comment line" })
+vim.keymap.set("x", "<C-c>", "gc", { remap = true, desc = "Toggle comment" })
+
 -- duplicate the line
-keymap.set("n", "<C-,>", "_Yp")
+keymap.set("n", "<C-.>", "Vyp")
 
 keymap.set("n", "<space>tt", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
@@ -30,17 +33,6 @@ end)
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
 
--- These mappings control the size of splits (height/width)
-keymap.set("n", "<M-,>", "<c-w>5<")
-keymap.set("n", "<M-.>", "<c-w>5>")
-keymap.set("n", "<M-t>", "<C-W>+")
-keymap.set("n", "<M-s>", "<C-W>-")
-
-keymap.set("n", "<c-j>", "<c-w><c-j>")
-keymap.set("n", "<c-k>", "<c-w><c-k>")
-keymap.set("n", "<c-l>", "<c-w><c-l>")
-keymap.set("n", "<c-h>", "<c-w><c-h>")
-
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
@@ -51,6 +43,7 @@ keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
 
 keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")

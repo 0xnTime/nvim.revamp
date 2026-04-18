@@ -1,5 +1,4 @@
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
-vim.cmd.colorscheme('vim')
 require('mini.basics').setup()
 require('mini.surround').setup()
 require('mini.ai').setup()
@@ -17,3 +16,4 @@ mappings = {
 })
 require('mini.extra').setup()
 require('mini.splitjoin').setup()
+require('mini.pairs').setup()
