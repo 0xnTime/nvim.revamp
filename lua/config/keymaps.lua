@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 
 keymap.set("n", "<space>e", "<cmd>NvimTreeToggle<CR>")
 keymap.set("n", "<space>f", "<cmd>Pick files<CR>")
+keymap.set("n", "<leader>th", "<cmd>ThemePicker<CR>", { desc = "Pick colorscheme" })
 	
 -- greatest remap ever
 keymap.set("x", "<leader>p", [["_dP]])

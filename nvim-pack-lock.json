@@ -4,9 +4,21 @@
       "rev": "539d73def39c9172b4d4d769f14090e08f37b29d",
       "src": "https://github.com/romgrk/barbar.nvim"
     },
+    "carvion": {
+      "rev": "1515a25d4422bbdd388c40a67e36f611bb5aa8de",
+      "src": "https://github.com/zitrocode/carvion.nvim"
+    },
+    "catppuccin": {
+      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "gitsigns.nvim": {
       "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "lake-dweller.nvim": {
+      "rev": "c2e1152dc5f463e9acf9d11dc100ac99ceecd3cc",
+      "src": "https://github.com/yonatanperel/lake-dweller.nvim"
     },
     "mini.nvim": {
       "rev": "29447d7b0e1fc9bc9d0384953e63be3fae816736",
@@ -31,6 +43,10 @@
     "olive-crt.nvim": {
       "rev": "123c035a3bdfb37c1640acf175a9426681bfeeb3",
       "src": "https://github.com/reobin/olive-crt.nvim"
+    },
+    "which-key.nvim": {
+      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
+      "src": "https://github.com/folke/which-key.nvim"
     }
   }
 }
