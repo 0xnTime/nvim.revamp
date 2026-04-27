@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "barbar.nvim": {
-      "rev": "539d73def39c9172b4d4d769f14090e08f37b29d",
-      "src": "https://github.com/romgrk/barbar.nvim"
-    },
     "carvion": {
       "rev": "1515a25d4422bbdd388c40a67e36f611bb5aa8de",
       "src": "https://github.com/zitrocode/carvion.nvim"
@@ -44,9 +40,9 @@
       "rev": "123c035a3bdfb37c1640acf175a9426681bfeeb3",
       "src": "https://github.com/reobin/olive-crt.nvim"
     },
-    "which-key.nvim": {
-      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
-      "src": "https://github.com/folke/which-key.nvim"
-    }
+    "snacks.nvim": {
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
   }
 }
