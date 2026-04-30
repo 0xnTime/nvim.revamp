@@ -3,7 +3,10 @@ local opts = { noremap = true, silent = true }
 
 
 keymap.set("n", "-", "<cmd>Oil<CR>")
-keymap.set("n", "<space>f", "<cmd>Pick files<CR>")
+
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
+
+keymap.set("n", "<leader>f", "<cmd>Pick files<CR>")
 keymap.set("n", "<leader>th", "<cmd>ThemePicker<CR>", {  })
 	
 -- greatest remap ever
