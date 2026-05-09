@@ -6,7 +6,9 @@ keymap.set("n", "-", "<cmd>Oil<CR>")
 
 keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
 
-keymap.set("n", "<leader>f", "<cmd>Pick files<CR>")
+keymap.set("n", "<leader>ff", "<cmd>Pick files<CR>")
+keymap.set("n", "<leader>fg", "<cmd>Pick grep_live<CR>")
+
 keymap.set("n", "<leader>th", "<cmd>ThemePicker<CR>", {  })
 	
 -- greatest remap ever

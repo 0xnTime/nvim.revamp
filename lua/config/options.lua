@@ -5,7 +5,7 @@ local opt = vim.opt
 -- You have to turn this one on :)
 opt.inccommand = "split"
 
--- vim.opt.guicursor = "n-v-i-c:block-Cursor"
+opt.guicursor = "n-v-i-c:block-Cursor"
 
 -- Best search settings :)
 opt.smartcase = true
