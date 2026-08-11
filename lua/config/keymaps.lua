@@ -30,9 +30,9 @@ keymap.set("n", "<space>tt", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
 end)
 
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.get_next()
-end)
+-- keymap.set("n", "<C-j>", function()
+--   vim.diagnostic.get_next()
+-- end)
 
 -- Spliting
 

@@ -4,6 +4,12 @@ vim.lsp.enable({ 'ts_ls' })
 vim.lsp.enable({ 'clangd' })
 vim.lsp.enable({ 'gopls' })
 
+vim.lsp.config('ts_ls', {
+  init_options = {
+    tsserver = { path = '/usr/lib/node_modules/typescript/lib/tsserver.js' },
+  },
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("user-lsp-attach", { clear = true }),
 	callback = function(ev)

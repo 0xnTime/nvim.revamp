@@ -15,6 +15,7 @@ opt.ignorecase = true
 opt.number = true
 opt.relativenumber = false
 opt.cursorline = false
+opt.laststatus = 3
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -26,6 +27,10 @@ opt.splitright = true
 
 opt.signcolumn = "yes"
 opt.shada = { "'10", "<0", "s10", "h" }
+
+-- Keep the completion popup from eating the screen. 
+opt.pumheight = 10
+opt.pummaxwidth = 40
 
 opt.swapfile = false
 
