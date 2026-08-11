@@ -8,6 +8,10 @@ vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
 require("rose-pine").setup({
 	styles = {
 		transparency = true
+	},
+	
+	highlight_groups = {
+		Cursor = { fg = "base", bg = "#ffffff" },
 	}
 })
 
