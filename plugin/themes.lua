@@ -5,6 +5,8 @@ vim.pack.add{{
 
 vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
 
+vim.pack.add({ "https://github.com/WTFox/jellybeans.nvim" })
+
 require("rose-pine").setup({
 	styles = {
 		transparency = true
@@ -14,4 +16,3 @@ require("rose-pine").setup({
 		Cursor = { fg = "base", bg = "#ffffff" },
 	}
 })
-
