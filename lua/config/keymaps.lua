@@ -1,6 +1,15 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+keymap.set('n', 'gK', function()
+
+  local new_config = not vim.diagnostic.config().virtual_lines
+
+  vim.diagnostic.config({ virtual_lines = new_config })
+
+end, { desc = 'Toggle diagnostic virtual_lines' })
 
 keymap.set("n", "-", "<cmd>Oil<CR>")
 
@@ -13,7 +22,6 @@ keymap.set("n", "<leader>fg", "<cmd>Pick grep_live<CR>")
 keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>")
 
 keymap.set("n", "<leader>th", "<cmd>ThemePicker<CR>", {  })
-	
 -- greatest remap ever
 keymap.set("x", "<leader>p", [["_dP]])
 
@@ -23,8 +31,8 @@ keymap.set("n", "<leader>Y", [["+Y]])
 
 keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
-vim.keymap.set("n", "<C-c>", "gcc", { remap = true, desc = "Toggle comment line" })
-vim.keymap.set("x", "<C-c>", "gc", { remap = true, desc = "Toggle comment" })
+keymap.set("n", "<C-c>", "gcc", { remap = true, desc = "Toggle comment line" })
+keymap.set("x", "<C-c>", "gc", { remap = true, desc = "Toggle comment" })
 
 -- duplicate the line
 keymap.set("n", "<C-.>", "Vyp")
@@ -33,9 +41,9 @@ keymap.set("n", "<space>tt", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
 end)
 
--- keymap.set("n", "<C-j>", function()
---   vim.diagnostic.get_next()
--- end)
+keymap.set("n", "<C-n>", function()
+  vim.diagnostic.get_next()
+end)
 
 -- Spliting
 

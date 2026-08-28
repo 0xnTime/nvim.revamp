@@ -1,13 +1,28 @@
-vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
 vim.lsp.enable({ 'lua_ls' })
 vim.lsp.enable({ 'ts_ls' })
 vim.lsp.enable({ 'clangd' })
-vim.lsp.enable({ 'gopls' })
 
 vim.lsp.config('ts_ls', {
-  init_options = {
-    tsserver = { path = '/usr/lib/node_modules/typescript/lib/tsserver.js' },
-  },
+	init_options = {
+		tsserver = { path = '/usr/lib/node_modules/typescript/lib/tsserver.js' },
+	},
+})
+
+
+vim.api.nvim_create_autocmd('LspAttach', {
+
+  callback = function(ev)
+
+    local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+
+    -- if client:supports_method('textDocument/completion') then
+
+	vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = true})
+
+    -- end
+
+  end,
+
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -16,6 +31,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local map = function(mode, lhs, rhs, desc)
 			vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, silent = true, desc = desc })
 		end
+
 
 		map("n", "gd", vim.lsp.buf.definition, "LSP: Go to definition")
 		map("n", "gD", vim.lsp.buf.declaration, "LSP: Go to declaration")
@@ -33,4 +49,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<leader>dl", vim.diagnostic.open_float, "Diagnostic float")
 		map("n", "<leader>dq", vim.diagnostic.setloclist, "Diagnostic loclist")
 	end,
+
 })

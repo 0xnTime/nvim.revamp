@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
 			if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
 			vim.cmd('TSUpdate')
 			require('nvim-treesitter.configs').setup({
-				ensure_installed = { 'go', 'c', 'typescript', 'python' },
+				ensure_installed = { 'c', 'typescript', 'lua' },
 				auto_install = true,
 			})
 		end

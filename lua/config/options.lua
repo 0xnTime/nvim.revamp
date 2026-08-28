@@ -1,7 +1,5 @@
 local opt = vim.opt
 
------ Interesting Options -----
-
 -- You have to turn this one on :)
 opt.inccommand = "split"
 
@@ -13,11 +11,9 @@ opt.ignorecase = true
 
 ----- Personal Preferences -----
 opt.number = true
-opt.relativenumber = false
+opt.relativenumber = true
 opt.cursorline = false
 opt.laststatus = 3
-
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 opt.clipboard = ""
 opt.mouse = "a"
@@ -32,10 +28,14 @@ opt.shada = { "'10", "<0", "s10", "h" }
 opt.pumheight = 10
 opt.pummaxwidth = 40
 
+opt.scrolloff = 8
+
 opt.swapfile = false
 
 -- Don't have `o` add a comment
 opt.formatoptions:remove "o"
+
+opt.colorcolumn = "80"
 
 opt.wrap = true
 opt.linebreak = true
@@ -52,21 +52,4 @@ opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
 
 opt.undofile = true
 
-vim.api.nvim_create_user_command("Unique", function()
-  -- get visual selection
-  local start_line = vim.fn.getpos("'<")[2]
-  local end_line = vim.fn.getpos("'>")[2]
-
-  local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
-
-  local seen = {}
-  local uniq = {}
-  for _, l in ipairs(lines) do
-    if not seen[l] then
-      seen[l] = true
-      table.insert(uniq, l)
-    end
-  end
-
-  vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, uniq)
-end, { range = true })
+opt.showmode = false
