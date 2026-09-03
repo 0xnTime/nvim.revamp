@@ -11,17 +11,22 @@ vim.lsp.config('ts_ls', {
 
 vim.api.nvim_create_autocmd('LspAttach', {
 
-  callback = function(ev)
+	callback = function(ev)
 
-    local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
 
-    -- if client:supports_method('textDocument/completion') then
+		if client:supports_method('textDocument/completion') then
 
-	vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = true})
+			local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
 
-    -- end
+			client.server_capabilities.completionProvider.triggerCharacters = chars
 
-  end,
+
+			vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = true})
+
+		end
+
+	end,
 
 })
 
@@ -51,3 +56,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 
 })
+
+vim.keymap.set('n', 'gK', function()
+
+  local new_config = not vim.diagnostic.config().virtual_lines
+
+  vim.diagnostic.config({ virtual_lines = new_config })
+
+end, { desc = 'Toggle diagnostic virtual_lines' })
+
+vim.keymap.set("n", "<space>tt", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
+end)

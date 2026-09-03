@@ -11,13 +11,8 @@ keymap.set('n', 'gK', function()
 
 end, { desc = 'Toggle diagnostic virtual_lines' })
 
-keymap.set("n", "-", "<cmd>Oil<CR>")
-
-keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
-
 keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>")
 
-keymap.set("n", "<leader>th", "<cmd>ThemePicker<CR>", {  })
 -- greatest remap ever
 keymap.set("x", "<leader>p", [["_dP]])
 
@@ -30,12 +25,6 @@ keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the 
 keymap.set("n", "<C-c>", "gcc", { remap = true, desc = "Toggle comment line" })
 keymap.set("x", "<C-c>", "gc", { remap = true, desc = "Toggle comment" })
 
--- duplicate the line
-keymap.set("n", "<C-.>", "Vyp")
-
-keymap.set("n", "<space>tt", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
-end)
 
 keymap.set("n", "<C-n>", function()
   vim.diagnostic.get_next()
@@ -55,8 +44,6 @@ keymap.set("n", "=ap", "ma=ap'a")
 keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 
 keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")

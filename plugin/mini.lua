@@ -1,5 +1,13 @@
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 require('mini.surround').setup()
+require('mini.pick').setup()
 require('mini.ai').setup()
 require('mini.notify').setup()
+require('mini.icons').setup()
 require('mini.pairs').setup()
+require('mini.hipatterns').setup()
+
+vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>")
+vim.keymap.set("n", "<leader>fg", "<cmd>Pick grep_live<cr>")
+vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<cr>")
+vim.keymap.set("n", "<leader>fh", "<cmd>Pick help<cr>")

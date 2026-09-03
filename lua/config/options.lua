@@ -3,14 +3,14 @@ local opt = vim.opt
 -- You have to turn this one on :)
 opt.inccommand = "split"
 
-opt.guicursor = "n-v-i-c:block-Cursor"
+opt.guicursor = ""
 
 -- Best search settings :)
 opt.smartcase = true
 opt.ignorecase = true
 
 ----- Personal Preferences -----
-opt.number = true
+opt.nu = true
 opt.relativenumber = true
 opt.cursorline = false
 opt.laststatus = 3

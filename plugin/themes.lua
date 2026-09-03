@@ -20,43 +20,10 @@ require("rose-pine").setup({
 
 require("solarized-osaka").setup({
 	transparent = true,
-	on_highlights = function(hl, c)
-		-- hl.Cursor = {
-		-- 	fg = c.bg,
-		-- 	bg = "#ffffff",
-		-- }
-		hl.TelescopeNormal = {
-			bg = "NONE",
-			fg = c.fg_dark,
-		}
-		hl.TelescopeBorder = {
-			bg = "NONE",
-			fg = c.fg_dark,
-		}
-		hl.TelescopePromptNormal = {
-			bg = "NONE",
-		}
-		hl.TelescopePromptBorder = {
-			bg = "NONE",
-			fg = c.fg_dark,
-		}
-		hl.TelescopePromptTitle = {
-			bg = "NONE",
-			fg = c.fg_dark,
-		}
-		hl.TelescopePreviewTitle = {
-			bg = "NONE",
-			fg = c.fg_dark,
-		}
-		hl.TelescopeResultsTitle = {
-			bg = "NONE",
-			fg = c.fg_dark,
-		}
-		hl.MiniNotifyNormal = {
-			bg = "NONE",
-		}
-		hl.MiniNotifyBorder = {
-			bg = "NONE",
-		}
-	end,
+	styles = {
+		comments = { italic = false },
+		keywords = { italic = false },
+	},
 })
+
+vim.cmd.colorscheme("rose-pine")
