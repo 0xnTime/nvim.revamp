@@ -6,6 +6,7 @@ vim.pack.add{{
 	src = "https://github.com/craftzdog/solarized-osaka.nvim",
 	name = "solarized-osaka"
 }}
+vim.pack.add{("https://github.com/ellisonleao/gruvbox.nvim")}
 
 require("rose-pine").setup({
 	styles = {
@@ -26,4 +27,8 @@ require("solarized-osaka").setup({
 	},
 })
 
-vim.cmd.colorscheme("rose-pine")
+require("gruvbox").setup({
+	  transparent_mode = true
+})
+
+vim.cmd.colorscheme("gruvbox")
